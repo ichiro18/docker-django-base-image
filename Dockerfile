@@ -4,6 +4,8 @@ ENV PYTHONUNBUFFERED 1
 ENV PYTHONIOENCODING=utf-8
 
 RUN apt-get update && apt-get -y upgrade \
+    # Настраиваем локали
+    && apt-get install -y locales && locale-gen en_US.UTF-8  \
     # Для add-apt-repository
     && apt-get install -y software-properties-common curl
 
